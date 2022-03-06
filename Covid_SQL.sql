@@ -173,7 +173,7 @@ ORDER BY procentage_deaths_per_country DESC OFFSET 0 ROWS
 -- Let's see how many countries appear in the top 10 most smoked countires and also top 10 highest death rates per country
 SELECT *
 FROM (
-SELECT location,
+SELECT TOP 10 location,
 				MAX((TRY_CONVERT(float,female_smokers) + TRY_CONVERT(float,male_smokers)) / 2) total_smokers,
 				MAX(population) population_country,
 				ROW_NUMBER() OVER(ORDER BY 	MAX((TRY_CONVERT(float,female_smokers) + TRY_CONVERT(float,male_smokers)) / 2) DESC) row_n
@@ -190,6 +190,6 @@ WHERE location IN (
 				ORDER BY procentage_deaths_per_country DESC OFFSET 0 ROWS
 				 ) highest_procentage_smokers
 )
---> 8 out of the 10 most smoked countires are in the top 10 huhest death rates. There might be a correlation
+--> only 2 out of the 10 most smoked countires are in the top 10 huhest death rates. There might be a correlation
 
 
