@@ -190,6 +190,6 @@ WHERE location IN (
 				ORDER BY procentage_deaths_per_country DESC OFFSET 0 ROWS
 				 ) highest_procentage_smokers
 )
---> only 2 out of the 10 most smoked countires are in the top 10 huhest death rates. There might be a correlation
+--> only 2 out of the 10 most smoked countires are in the top 10 huhest death rates. Tere most be other factors 
 
 
